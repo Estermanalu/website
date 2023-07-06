@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
      <div class="alert alert-info">
-        Selamat Datang di Website Laravel Ester Manalu
+        Selamat Datang di Website tty
      </div>
     </div>
   </div>
