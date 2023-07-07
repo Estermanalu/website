@@ -8,10 +8,16 @@
   <link href="{{ asset('/') }}assets/plugins/fontawesome/css/all.min.css" rel="stylesheet">
 </head>
 <body>
- <!-- Bagian header layout -->
-
+    <!-- Bagian header layout -->
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+   
     <!-- Bagian sidebar layout -->
-    @include('partials.sidebar')
+    <div class="sidebar">
+      <a href="#" class="active">Menu 1</a>
+      <a href="#">Menu 2</a>
+      <a href="#">Menu 3</a>
+      <a href="#">Menu 4</a>
+  </div>
 
     <!-- Bagian konten layout -->
     <div class="content">
@@ -55,5 +61,7 @@
 
   {{-- end content --}}
   <script src="{{ asset('/') }}assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('js/sidebar.js') }}"></script>
+
 </body>
 </html>
