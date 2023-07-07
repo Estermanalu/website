@@ -32,6 +32,16 @@
     </div>
   </nav>
 
+
+   {{-- content --}}
+
+   <div class="mt-2">
+    <div class="container">
+     @yield('content')
+    </div>
+  </div>
+
+  {{-- end content --}}
   <script src="{{ asset('/') }}assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
