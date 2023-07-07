@@ -8,19 +8,7 @@
   <link href="{{ asset('/') }}assets/plugins/fontawesome/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Bagian header layout -->
-    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
-   
-    <!-- Bagian sidebar layout -->
-    
-
-    <!-- Bagian konten layout -->
-    <div class="content">
-        @yield('content')
-    </div>
-
-    <!-- Bagian footer layout -->
-
+  
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-info navbar-dark">
     <div class="container">
