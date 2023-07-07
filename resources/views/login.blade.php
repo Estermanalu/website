@@ -19,8 +19,8 @@
                             @csrf
 
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required autofocus>
+                                <label for="no_badge" class="form-label">No Badge</label>
+                                <input type="no_badge" id="no_badge" name="no_badge" class="form-control" required autofocus>
                             </div>
 
                             <div class="mb-3">
