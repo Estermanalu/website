@@ -20,10 +20,4 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
-
-    protected function authenticated(Request $request, $user)
-    {
-        // Customize the redirection after successful login if needed
-        return redirect()->intended($this->redirectTo);
-    }
 }
