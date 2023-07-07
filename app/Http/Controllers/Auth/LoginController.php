@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/home';
 
     public function __construct()
     {
@@ -20,5 +20,10 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('auth.login');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        // Custom logic after user successfully authenticated
     }
 }
