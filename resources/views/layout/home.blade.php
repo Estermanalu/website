@@ -1,6 +1,14 @@
 @extends('layout.main')
 
 @section('content')
-    <h1>Halaman Utama</h1>
-    <p>Selamat datang di halaman utama.</p>
+<div class="card">
+    <div class="card-header">
+      WELCOME
+    </div>
+    <div class="card-body">
+     <div class="alert alert-info">
+        Selamat Datang di Website tty
+     </div>
+    </div>
+  </div>
 @endsection
