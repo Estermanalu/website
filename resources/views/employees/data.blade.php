@@ -46,7 +46,7 @@
                     <tr>
                         {{-- <th>{{ $loop->iteration }}</th> --}}
                         <td>{{ $nomor++ }}</td>
-                        <td>{{ $row->idemployees }}</td>
+                        <td>{{ $row->id_employees }}</td>
                         <td>{{ $row->no_badge }}</td>
                         <td>{{ $row->nama }}</td>
                         <td>{{ $row->jabatan }}</td>
@@ -56,10 +56,10 @@
                         <td>{{ $row->keterangan=='H' ? 'Hadir': 'Sakit': 'Cuti' : 'Izin': 'Tanpa Keterangan' }}</td>
                         <td>
                             <div class="d-flex justify-content-center">
-                                <a href="{{ url('employees/'.$row->idemployees) }}" class="btn btn-info btn-sm me-2" title="Edit Data">
+                                <a href="{{ url('employees/'.$row->id_employees) }}" class="btn btn-info btn-sm me-2" title="Edit Data">
                                   <i class="fas fa-edit"></i>
                                 </a>
-                                <form onsubmit="return deleteData('{{ $row->fullname }}')" style="display: inline" method="POST" action="{{ url('employees/'.$row->idemployees) }}">
+                                <form onsubmit="return deleteData('{{ $row->nama }}')" style="display: inline" method="POST" action="{{ url('employees/'.$row->id_employees) }}">
                                   @csrf
                                   @method('DELETE')
                                   <button type="submit" title="Hapus Data" class="btn btn-danger btn-sm">
