@@ -27,12 +27,14 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Id Mahasiswa</th>
+                    <th>Id Employees</th>
+                    <th>No Badge</th>
                     <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Alamat</th>
-                    <th>Email</th>
-                    <th>Phone</th>
+                    <th>Jabatan</th>
+                    <th>Tanggal</th>
+                    <th>Jam Masuk</th>
+                    <th>Jam Keluar</th>
+                    <th>Keterangan</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -45,11 +47,13 @@
                         {{-- <th>{{ $loop->iteration }}</th> --}}
                         <td>{{ $nomor++ }}</td>
                         <td>{{ $row->idemployees }}</td>
-                        <td>{{ $row->fullname }}</td>
-                        <td>{{ $row->gender=='L' ? 'Laki-Laki': 'Perempuan' }}</td>
-                        <td>{{ $row->address }}</td>
-                        <td>{{ $row->emailaddress }}</td>
-                        <td>{{ $row->phone }}</td>
+                        <td>{{ $row->no_badge }}</td>
+                        <td>{{ $row->nama }}</td>
+                        <td>{{ $row->jabatan }}</td>
+                        <td>{{ $row->tanggal}}</td>
+                        <td>{{ $row->jam_masuk }}</td>
+                        <td>{{ $row->jam_keluar }}</td>
+                        <td>{{ $row->keterangan=='H' ? 'Hadir': 'Sakit': 'Cuti' : 'Izin': 'Tanpa Keterangan' }}</td>
                         <td>
                             <div class="d-flex justify-content-center">
                                 <a href="{{ url('employees/'.$row->idemployees) }}" class="btn btn-info btn-sm me-2" title="Edit Data">
