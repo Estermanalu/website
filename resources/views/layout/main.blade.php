@@ -24,7 +24,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->segment('1')== 'employees' ? 'active' : '' }}" aria-current="page" href="{{ url('employees') }}">
+            <a class="nav-link {{ request()->segment('1')== 'employees' ? 'active' : '' }}" aria-current="page" href="{{ url('employees/index') }}">
               <i class="fas fa-user"></i> Pegawai
             </a>
           </li>
