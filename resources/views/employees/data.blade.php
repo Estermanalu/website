@@ -78,7 +78,7 @@
     </div>
     <script>
         function deleteData(name){
-            pesan = confirm('Yakin data mahasiswa ini dihapus?');
+            pesan = confirm('Yakin data pegawai ini dihapus?');
             if(pesan) return true;
             else return false;
         }
