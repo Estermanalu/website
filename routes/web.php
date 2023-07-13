@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeesController;
-use app\Controllers\Auts\LoginController;
+use app\Http\Controllers\Auts\LoginController;
 
 /*
 |--------------------------------------------------------------------------
