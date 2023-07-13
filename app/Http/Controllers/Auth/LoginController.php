@@ -2,28 +2,28 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
-use resource\view\auth\login;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-
     public function showLoginForm()
-{
-    return view('auth.login');
-}
-
-    public function login(Request $request)
-{
-    $credentials = $request->only('email', 'password');
-
-    if (Auth::attempt($credentials)) {
-        return redirect()->intended('/');
+    {
+        return view('auth.login');
     }
 
-    return redirect()->back()->withErrors(['error' => 'Login failed.']);
-}
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('/');
+        }
+
+        return redirect()->back()->withErrors(['error' => 'Login failed.']);
+    }
+
 
     /**
      * Display a listing of the resource.
