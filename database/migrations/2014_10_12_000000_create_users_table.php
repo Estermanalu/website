@@ -1,4 +1,5 @@
 <?php
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
