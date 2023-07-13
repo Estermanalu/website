@@ -28,12 +28,26 @@ class EmployeesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('employees.data')->with([
-            'employees' =>  $dataEmployees,
-            'search' => $search
-        ]);
+        
+        {
+            $search = $request->query('search');
+    
+            if(!empty($search)){
+                $dataEmployees = Employees::where('employees.idemployees', 'like', '%' .$search. '%')
+                    ->orWhere('employees.fullname', 'like','%' .$search. '%')
+                    ->orWhere('employees.address', 'like','%' .$search. '%')
+                    ->paginate(5)->onEachSide(2)->fragment('mhs');
+            }else{
+                $dataEmployees = Employees::paginate(5)->fragment('mhs');
+            }
+    
+            return view('employees.data')->with([
+                'employees' => $dataEmployees,
+                'search' => $search
+            ]);
+        }
             
     }
 
