@@ -5,6 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\employees;
 use App\Http\Requests\StoreemployeesRequest;
 use App\Http\Requests\UpdateemployeesRequest;
+use Illuminate\Http\Request;
+
+class YourController extends Controller
+{
+    public function showPage()
+    {
+        $search = ''; // Mendefinisikan variabel $search dengan nilai awal yang sesuai
+
+        // Logika lainnya untuk mengisi atau memanipulasi nilai $search
+
+        return view('search', ['search' => $search]);
+    }
+
+    // Fungsi lainnya dalam controller
+}
 
 class EmployeesController extends Controller
 {
@@ -16,9 +31,8 @@ class EmployeesController extends Controller
     public function index()
     {
         return view('employees.data')->with([
-            'employees' => $dataEmployees,
+            'employees' =>  $dataEmployees,
             'search' => $search
-
         ]);
             
     }

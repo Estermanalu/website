@@ -53,7 +53,16 @@
                         <td>{{ $row->tanggal}}</td>
                         <td>{{ $row->jam_masuk }}</td>
                         <td>{{ $row->jam_keluar }}</td>
-                        <td>{{ $row->keterangan=='H' ? 'Hadir': 'Sakit': 'Cuti' : 'Izin': 'Tanpa Keterangan' }}</td>
+                        <td>
+                          {{
+                            $row->keterangan == 'H' ? 'Hadir' :
+                            ($row->keterangan == 'S' ? 'Sakit' :
+                            ($row->keterangan == 'C' ? 'Cuti' :
+                            ($row->keterangan == 'I' ? 'Izin' :
+                            'Tanpa Keterangan')))
+                          }}
+                        </td>
+                        
                         <td>
                             <div class="d-flex justify-content-center">
                                 <a href="{{ url('employees/'.$row->id_employees) }}" class="btn btn-info btn-sm me-2" title="Edit Data">
