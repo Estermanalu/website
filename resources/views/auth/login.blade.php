@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @extends('layouts.main')
+=======
+@extends('layout.main')
+>>>>>>> e24680086984400e316d44b80f28b6febc4d1462
 
 @section('content')
     <div class="container">
