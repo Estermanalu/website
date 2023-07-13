@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
      <div class="alert alert-info">
-        Selamat Datang di Website tty
+        Selamat Datang di Website Sistem Absensi Pegawai
      </div>
     </div>
   </div>
