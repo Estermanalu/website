@@ -36,11 +36,11 @@ class EmployeesController extends Controller
     
             if(!empty($search)){
                 $dataEmployees = Employees::where('employees.idemployees', 'like', '%' .$search. '%')
-                    ->orWhere('employees.fullname', 'like','%' .$search. '%')
-                    ->orWhere('employees.address', 'like','%' .$search. '%')
-                    ->paginate(5)->onEachSide(2)->fragment('mhs');
+                    ->orWhere('employees.nama', 'like','%' .$search. '%')
+                    ->orWhere('employees.no_badge', 'like','%' .$search. '%')
+                    ->paginate(5)->onEachSide(2)->fragment('employees');
             }else{
-                $dataEmployees = Employees::paginate(5)->fragment('mhs');
+                $dataEmployees = Employees::paginate(5)->fragment('employees');
             }
     
             return view('employees.data')->with([
