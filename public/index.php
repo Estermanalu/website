@@ -2,6 +2,8 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\EmployeesController;
+use app\Http\Controllers\Auts\LoginController;
 
 define('LARAVEL_START', microtime(true));
 
@@ -48,6 +50,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
-$response = $kernel->handle()->send();
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
 
 $kernel->terminate($request, $response);
