@@ -17,7 +17,6 @@ class EmployeesController extends Controller
     {
         return view('employees.data')->with([
             'employees' => Employees::all()
-            
 
         ]);
             
