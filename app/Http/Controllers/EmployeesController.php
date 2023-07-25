@@ -38,9 +38,9 @@ class EmployeesController extends Controller
                 $dataEmployees = Employees::where('employees.idemployees', 'like', '%' .$search. '%')
                     ->orWhere('employees.nama', 'like','%' .$search. '%')
                     ->orWhere('employees.no_badge', 'like','%' .$search. '%')
-                    ->paginate(5)->onEachSide(2)->fragment('employees');
+                    ->paginate(5)->onEachSide(2)->fragment('id_employees');
             }else{
-                $dataEmployees = Employees::paginate(5)->fragment('employees');
+                $dataEmployees = Employees::paginate(5)->fragment('id_employees');
             }
     
             return view('employees.data')->with([
@@ -69,7 +69,18 @@ class EmployeesController extends Controller
      */
     public function store(StoreemployeesRequest $request)
     {
-        //
+        $validate = $request->validated();
+
+        $employees = new employees;
+        $employees->idemployees = $request->txtid;
+        $employees->fullname = $request->txtfullname;
+        $employees->gender = $request->txtgender;
+        $employees->emailaddress = $request->txtemailaddress;
+        $employees->phone = $request->txtphone;
+        $employees->address = $request->txtaddress;
+        $employees->save();
+
+        return redirect('employees')->with('msg','Add New Mahasiswa ');
     }
 
     /**
