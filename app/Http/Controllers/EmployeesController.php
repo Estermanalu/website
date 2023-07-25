@@ -94,8 +94,8 @@ class EmployeesController extends Controller
         $data = $students->find($idstudents);
 
         if ($data) {
-            return view('students.formedit')->with([
-                'txtid' => $idstudents,
+            return view('employess.formedit')->with([
+                'txtid' => $idemployess,
                 'txtfullname' => $data->fullname,
                 'txtgender' => $data->gender,
                 'txtaddress' => $data->address,
@@ -127,7 +127,7 @@ class EmployeesController extends Controller
      */
     public function update(UpdateemployeesRequest $request, employees $employees)
     {
-        $data = $students->find($idstudents);
+        $data = $employess->find($idemployess);
         $data->fullname = $request->txtfullname;
         $data->gender = $request->txtgender;
         $data->emailaddress = $request->txtemailaddress;
@@ -135,7 +135,7 @@ class EmployeesController extends Controller
         $data->address = $request->txtaddress;
         $data->save();
 
-        return redirect('students')->with('msg','Update Data  ');
+        return redirect('employess')->with('msg','Update Data  ');
     }
 
     /**
@@ -146,8 +146,8 @@ class EmployeesController extends Controller
      */
     public function destroy(employees $employees)
     {
-        $data = $students->find($idstudents);
+        $data = $employess->find($idemployess);
         $data->delete();
-        return redirect('students')->with('msg',' Data Berhasil dihapus ');
+        return redirect('employess')->with('msg',' Data Berhasil dihapus ');
     }
 }
