@@ -91,7 +91,20 @@ class EmployeesController extends Controller
      */
     public function show(employees $employees)
     {
-        //
+        $data = $students->find($idstudents);
+
+        if ($data) {
+            return view('students.formedit')->with([
+                'txtid' => $idstudents,
+                'txtfullname' => $data->fullname,
+                'txtgender' => $data->gender,
+                'txtaddress' => $data->address,
+                'txtemailaddress' => $data->emailaddress,
+                'txtphone' => $data->phone,
+            ]);
+        } else {
+            // Handle jika data mahasiswa tidak ditemukan
+        }
     }
 
     /**
@@ -114,7 +127,15 @@ class EmployeesController extends Controller
      */
     public function update(UpdateemployeesRequest $request, employees $employees)
     {
-        //
+        $data = $students->find($idstudents);
+        $data->fullname = $request->txtfullname;
+        $data->gender = $request->txtgender;
+        $data->emailaddress = $request->txtemailaddress;
+        $data->phone = $request->txtphone;
+        $data->address = $request->txtaddress;
+        $data->save();
+
+        return redirect('students')->with('msg','Update Data  ');
     }
 
     /**
@@ -125,6 +146,8 @@ class EmployeesController extends Controller
      */
     public function destroy(employees $employees)
     {
-        //
+        $data = $students->find($idstudents);
+        $data->delete();
+        return redirect('students')->with('msg',' Data Berhasil dihapus ');
     }
 }
